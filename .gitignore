@@ -3,3 +3,6 @@
 !.env.example
 
 datos-privados/
+
+node_modules/
+material/

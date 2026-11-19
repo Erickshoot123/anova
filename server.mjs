@@ -1,4 +1,4 @@
-import { prospectos } from './prospectos.mjs';
+import { prospectos } from './backend/prospectos.mjs';
 import http from 'node:http';
 import { readFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
@@ -6,7 +6,7 @@ import { brotliCompressSync, gzipSync } from 'node:zlib';
 
 const types = { html: 'text/html', css: 'text/css', js: 'text/javascript', png: 'image/png', gif: 'image/gif', webp: 'image/webp', jpg: 'image/jpeg' };
 const assets = new Map();
-for (const name of ["avance-7285160706306002181.webp","avance-7300297308925627653.webp","avance-7318124955420347654.webp","avance-7597188569593023752.webp","avance-7599024395952164103.webp","avance-7638841915324026120.webp", 'index.html', '404.html', '500.html', 'anova.css', 'anova.js', 'node_modules/motion/dist/motion.js', 'anova-logo.png', 'avance-local-1.gif', 'avance-local-2.gif', 'avance-local-3.gif', 'favicon.png', 'portada-local-1.jpg', 'portada-7597188569593023752.jpg', 'portada-7300297308925627653.jpg', 'portada-7569683411036605714.jpg', 'portada-7599024395952164103.jpg', 'portada-local-2.jpg', 'portada-7318124955420347654.jpg', 'portada-local-3.jpg', 'portada-7638841915324026120.jpg', 'portada-7285160706306002181.jpg']) {
+for (const name of ["assets/animaciones/avance-7285160706306002181.webp","assets/animaciones/avance-7300297308925627653.webp","assets/animaciones/avance-7318124955420347654.webp","assets/animaciones/avance-7597188569593023752.webp","assets/animaciones/avance-7599024395952164103.webp","assets/animaciones/avance-7638841915324026120.webp", 'index.html', 'privacidad.html', '404.html', '500.html', 'assets/css/anova.css', 'assets/js/anova.js', 'node_modules/motion/dist/motion.js', 'assets/imagenes/marca/anova-logo.png', 'assets/animaciones/avance-local-1.gif', 'assets/animaciones/avance-local-2.gif', 'assets/animaciones/avance-local-3.gif', 'assets/imagenes/marca/favicon.png', 'assets/imagenes/portadas/portada-local-1.jpg', 'assets/imagenes/portadas/portada-7597188569593023752.jpg', 'assets/imagenes/portadas/portada-7300297308925627653.jpg', 'assets/imagenes/portadas/portada-7569683411036605714.jpg', 'assets/imagenes/portadas/portada-7599024395952164103.jpg', 'assets/imagenes/portadas/portada-local-2.jpg', 'assets/imagenes/portadas/portada-7318124955420347654.jpg', 'assets/imagenes/portadas/portada-local-3.jpg', 'assets/imagenes/portadas/portada-7638841915324026120.jpg', 'assets/imagenes/portadas/portada-7285160706306002181.jpg']) {
   const raw = await readFile(new URL(name, import.meta.url));
   const type = types[name.split('.').pop().toLowerCase()];
   const variants = { identity: raw };

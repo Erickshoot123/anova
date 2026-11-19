@@ -125,3 +125,26 @@
 #presupuestos + #portafolio{padding-top:clamp(32px,4vw,56px)}
 @media(max-width:760px){#presupuestos .spend-tables{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}}
 @media(max-width:360px){#presupuestos th,#presupuestos td{padding:10px}}
+
+.site-footer{background:#121212;color:#f4f1ea;padding:36px 6vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;border-top:3px solid #ff6b21}
+.site-footer strong,.site-footer small{display:block}.site-footer strong{font-size:24px}.site-footer nav{display:flex;flex-wrap:wrap;gap:12px 24px}.site-footer a{color:#f4f1ea;text-underline-offset:4px}.site-footer a:hover{color:#ff995f}
+.privacy-note a{color:inherit;text-decoration:underline}
+.notice{background:#f4f1ea;color:#121212}
+.notice-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:1100px;margin:auto;padding:18px 24px}
+.notice-bar img{display:block;width:clamp(98px,16vw,154px)}
+.notice a{color:inherit;text-underline-offset:4px}
+.notice-bar a:last-child{font-size:.9rem;font-weight:650}
+.notice a:focus-visible{outline:3px solid #ac430f;outline-offset:4px}
+.notice-title{background:#121212;color:#f4f1ea;border-bottom:4px solid #ff6b21}
+.notice-title h1{max-width:1100px;margin:auto;padding:clamp(38px,6vw,76px) 24px;font-size:clamp(40px,7vw,84px);line-height:1.03;letter-spacing:-.055em}
+.notice-title span{color:#ff6b21}
+.notice-layout{display:grid;grid-template-columns:minmax(170px,1fr) minmax(0,690px);gap:clamp(32px,7vw,96px);max-width:1100px;margin:auto;padding:clamp(32px,5vw,64px) 24px}
+.notice-layout nav{display:grid;align-self:start;gap:12px;border-left:3px solid #ff6b21;padding-left:16px}
+.notice-layout nav a{font-size:.95rem}
+.notice-copy aside{background:#ffeadc;border-left:4px solid #ff6b21;padding:16px 20px;line-height:1.6}
+.notice-copy aside strong{display:block}
+.notice-copy section{padding:28px 0;border-bottom:1px solid #ccc6bb}
+.notice-copy h2{font-size:clamp(23px,3vw,32px);line-height:1.15;margin:0 0 14px}
+.notice-copy p{line-height:1.7;margin:0;color:#36332f}
+.notice-copy p+p{margin-top:12px}
+@media(max-width:700px){.notice-layout{grid-template-columns:1fr;gap:24px}.notice-bar{padding-inline:20px}}
