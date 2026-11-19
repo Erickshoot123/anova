@@ -1,0 +1,8 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "server.mjs": {
+      "includeFiles": "{assets/**/*,index.html,privacidad.html,404.html,500.html,node_modules/motion/dist/motion.js}"
+    }
+  }
+}
