@@ -4,6 +4,22 @@ const back = document.querySelector('#volver');
 const next = document.querySelector('#seguir');
 const result = document.querySelector('#dictamen');
 const contact = document.querySelector('#contacto');
+for (const field of evaluation.querySelectorAll('[data-monto]')) {
+  field.addEventListener('input', () => {
+    const cursor = field.selectionStart;
+    const offset = field.value.slice(0, cursor).replace(/,/g, '').length;
+    const raw = field.value.replace(/,/g, '');
+    if (!/^\d*(?:\.\d*)?$/.test(raw)) return;
+    const [integer, fraction] = raw.split('.');
+    const grouped = integer.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    field.value = fraction === undefined ? grouped : grouped + '.' + fraction;
+    let position = 0, digits = 0;
+    while (position < field.value.length && digits < offset) {
+      if (field.value[position++] !== ',') digits++;
+    }
+    field.setSelectionRange(position, position);
+  });
+}
 let current = 0;
 let submissionId;
 function showStep(index) {
@@ -31,8 +47,8 @@ evaluation.addEventListener('submit', async event => {
     submissionId ||= crypto.randomUUID();
     const values = { id:submissionId };
     for (const step of steps) {
-      const input = step.querySelector('input:checked, input[type=number]');
-      values[input.name] = input.value;
+      const input = step.querySelector('input:checked, input[data-monto]');
+      values[input.name] = input.hasAttribute('data-monto') ? input.value.replace(/,/g, '') : input.value;
     }
     const { estado, agenda } = await sendData('/api/calificar', values);
     const mensajes = {

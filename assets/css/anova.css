@@ -148,3 +148,15 @@
 .notice-copy p{line-height:1.7;margin:0;color:#36332f}
 .notice-copy p+p{margin-top:12px}
 @media(max-width:700px){.notice-layout{grid-template-columns:1fr;gap:24px}.notice-bar{padding-inline:20px}}
+
+.produced-grid{max-width:1120px;margin:24px auto 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,2vw,24px)}
+.produced-grid video{width:100%;aspect-ratio:9/16;display:block;object-fit:contain;background:#121212;border-radius:12px}
+.tiktok-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.tiktok-grid img{width:100%;height:auto}
+@media(max-width:600px){.tiktok-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+.tiktok-grid{width:88%;max-width:1080px;margin-inline:auto;align-items:start}
+.tiktok-grid figure{margin:0;overflow:hidden;border-radius:8px;background:#f4f1ea;aspect-ratio:3/4}
+.tiktok-grid img{display:block;width:100%;height:100%;object-fit:cover;transform:scale(1.075)}
+@media(max-width:600px){.tiktok-grid{width:94%;gap:12px}}
+
+#resultados-tiktok > h2 { text-align: center; }
